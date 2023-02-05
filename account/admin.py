@@ -1,5 +1,6 @@
 from django.contrib import admin
 from account.models import Account, Youth, Family, UIPrefs, CheckInQr, YouthCheckInLog
+from connect.models import ContactConnect, TwilioPrefs
 from django.contrib.auth.admin import UserAdmin
 from datetime import datetime
 
@@ -73,6 +74,10 @@ class CheckinLogAdmin(admin.ModelAdmin):
     readonly_fields = ('youth_first_name', 'youth_last_name', 'last_checkin', 'last_checkout', 'checked_in_by', 'youthid', 'checked_out_by')
 
 admin.site.register(YouthCheckInLog, CheckinLogAdmin)
+
+admin.site.register(ContactConnect)
+
+admin.site.register(TwilioPrefs)
 
 #class ProductAdmin(admin.ModelAdmin):
 #    list_display = ('name', 'price')

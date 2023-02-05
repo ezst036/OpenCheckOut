@@ -83,10 +83,13 @@
                     {% if user.is_superuser %}
                         <a class="dropdown-item" href="/admin/">Administration</a>
                     {% else %}
-                        <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                    {% endif %}
-                    {% if user.is_staff %}
-                        <a class="dropdown-item" href="{% url 'check' %}">Sunday Check In</a>
+                        {% if user.is_staff %}
+                            <a class="dropdown-item" href="/admin/">Administration</a>
+                            <a class="dropdown-item" href="{% url 'check' %}">Sunday Check In</a>
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                        {% endif %}
                     {% endif %}
                     <!--<a class="dropdown-item" href="#">Something here</a>
                     <a class="dropdown-item" href="#">Something else here</a>-->

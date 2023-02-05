@@ -1,5 +1,4 @@
 from django.contrib import admin
-from connect.models import ContactConnect, TwilioPrefs
 
 class DigitalConnectAdmin(admin.AdminSite):
     site_header = 'Digital Connect Administration'
@@ -9,9 +8,3 @@ class DigitalConnectAdmin(admin.AdminSite):
     #fieldsets = ()
 
 connectadmin = DigitalConnectAdmin(name='ConnectAdmin')
-
-admin.site.register(ContactConnect)
-connectadmin.register(ContactConnect)
-
-admin.site.register(TwilioPrefs)
-connectadmin.register(TwilioPrefs)
