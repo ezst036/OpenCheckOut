@@ -34,7 +34,7 @@ menulink = driver.find_element(By.LINK_TEXT, "Profile")
 login.move_to_element(menulink).perform()
 time.sleep(4)
 menulink.click()
-time.sleep(4)
+time.sleep(3)
 
 profileupd = ActionChains(driver)
 profileupd = driver.find_element(By.NAME, 'email')
@@ -59,14 +59,16 @@ profileupd.send_keys("one")
 
 profileupd = driver.find_element(By.NAME, 'phone_number_0')
 profileupd.clear()
-profileupd.send_keys("one")
+profileupd.send_keys("one", Keys.TAB)
 
-profileupd = driver.find_element(By.NAME, 'updateProfileButton')
-profileupd.click()
+time.sleep(3)
 
-time.sleep(7)
+profileupd = driver.find_element(By.NAME, 'updateButton')
+profileupd.send_keys(Keys.ENTER)
+
+time.sleep(4)
 
 link = driver.find_element(By.LINK_TEXT, "Logout")
 link.click()
 
-time.sleep(15)
+time.sleep(7)
